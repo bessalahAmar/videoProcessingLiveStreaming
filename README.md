@@ -11,6 +11,9 @@ Etapes: 1er sprint: Etude sur les différent moyen possible pour Récupérer les
 
 Durée des sprints: une à deux semaines.
 
+#############################################################################################################################
+#############################################################################################################################
+
 POC ( proof of concept ) : https://github.com/bessalahAmar/videoProcessingLiveStreaming
 
 Roadmap Objective: To recover the French TV channel live and to perform image / speech processing on it.
@@ -26,3 +29,23 @@ Steps: 1st sprint:     Study on different ways possible to Recover live     Stud
 Sprints duration: one to two weeks.
 
 POC (proof of concept): https://github.com/bessalahAmar/videoProcessingLiveStreaming
+
+
+###########################################################################################################################
+###########################################################################################################################
+
+# download images of présentateur France 2
+python scriptGetImages.py 
+
+# extract embedding :
+python extract_embeddings.py --dataset dataset --embeddings output/embeddings.pickle --detector face_detection_model --embedding-model openface_nn4.small2.v1.t7
+
+# train SVM :
+python train_model.py --embeddings output/embeddings.pickle --recognizer output/recognizer.pickle --le output/le.pickle
+
+# run global recognizer france 2
+python f2.py --detector face_detection_model --embedding-model openface_nn4.small2.v1.t7 --recognizer output/recognizer.pickle --le output/le.pickle
+
+###########################################################################################################################
+###########################################################################################################################
+
