@@ -1,4 +1,5 @@
-# Feuille de route Objectif : Récupérer le live de chaine télévisé française et effectuer traitement d'image/parole la dessus.
+# Objectif : Récupérer le live de chaine télévisé française et effectuer traitement d'image/parole la dessus.
+# keywords : 
 
 Description: Création d'une application qui permet de Récupérer des live de chaine télévisé française et puis effectuer des traitement d'image la dessus ( comme : detection de visage , objet , ...) et traitement automatique de la parole ( comme : faire des sous titrage )
 
